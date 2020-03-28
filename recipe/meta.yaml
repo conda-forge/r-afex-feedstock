@@ -1,4 +1,4 @@
-{% set version = "0.26-0" %}
+{% set version = "0.27-2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/afex_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/afex/afex_{{ version }}.tar.gz
-  sha256: 2e860c54888ca31e5c9ea084bd5282209cb1dab7283a04241d5785f9b60e7740
+  sha256: c2ed35ee4908f3ce41090eb7f22bd713ce8663dbb84a35a4c48910e25b635563
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -46,19 +46,15 @@ test:
 about:
   home: http://afex.singmann.science/, https://github.com/singmann/afex
   license: GPL-2
-  summary: Convenience functions for analyzing factorial experiments using ANOVA or mixed models.
-    aov_ez(), aov_car(), and aov_4() allow specification of between, within (i.e., repeated-measures),
-    or mixed (i.e., split-plot)  ANOVAs for data in long format (i.e., one observation
-    per row), automatically aggregating multiple observations per individual and cell  of
-    the design. mixed() fits mixed models using lme4::lmer() and computes  p-values
-    for all fixed effects using either Kenward-Roger or Satterthwaite  approximation
-    for degrees of freedom (LMM only), parametric bootstrap  (LMMs and GLMMs), or likelihood
-    ratio tests (LMMs and GLMMs).  afex_plot() provides a high-level interface for interaction
-    or one-way  plots using ggplot2, combining raw data and model estimates. afex uses  type
-    3 sums of squares as default (imitating commercial statistical software).
+  summary: Convenience functions for analyzing factorial experiments using ANOVA or mixed models. aov_ez(), aov_car(), and aov_4() allow specification of between,
+    within (i.e., repeated-measures), or mixed (i.e., split-plot)  ANOVAs for data in long format (i.e., one observation per row), automatically aggregating multiple
+    observations per individual and cell  of the design. mixed() fits mixed models using lme4::lmer() and computes  p-values for all fixed effects using either Kenward-Roger
+    or Satterthwaite  approximation for degrees of freedom (LMM only), parametric bootstrap  (LMMs and GLMMs), or likelihood ratio tests (LMMs and GLMMs).  afex_plot()
+    provides a high-level interface for interaction or one-way  plots using ggplot2, combining raw data and model estimates. afex uses  type 3 sums of squares as
+    default (imitating commercial statistical software).
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
