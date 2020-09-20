@@ -3,7 +3,7 @@ About r-afex
 
 Home: http://afex.singmann.science/, https://github.com/singmann/afex
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
