@@ -1,4 +1,4 @@
-{% set version = "1.0-0" %}
+{% set version = "1.0-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/afex_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/afex/afex_{{ version }}.tar.gz
-  sha256: 9b51f89644494446d9f6eb19b89ad0328cc3ce48d969d53f692c646709754fe0
+  sha256: 6febc34b87a1109f5cbcd213c08d2b7b3e9cf99065fa41c19bc88ac99fb104cc
 
 build:
   merge_build_host: true  # [win]
