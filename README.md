@@ -5,7 +5,7 @@ Home: http://afex.singmann.science/, https://github.com/singmann/afex
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-afex-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-afex-feedstock/blob/main/LICENSE.txt)
 
 Summary: Convenience functions for analyzing factorial experiments using ANOVA or mixed models. aov_ez(), aov_car(), and aov_4() allow specification of between, within (i.e., repeated-measures), or mixed (i.e., split-plot)  ANOVAs for data in long format (i.e., one observation per row), automatically aggregating multiple observations per individual and cell  of the design. mixed() fits mixed models using lme4::lmer() and computes  p-values for all fixed effects using either Kenward-Roger or Satterthwaite  approximation for degrees of freedom (LMM only), parametric bootstrap  (LMMs and GLMMs), or likelihood ratio tests (LMMs and GLMMs).  afex_plot() provides a high-level interface for interaction or one-way  plots using ggplot2, combining raw data and model estimates. afex uses  type 3 sums of squares as default (imitating commercial statistical software).
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=956&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-afex-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=956&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-afex-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-afex` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-afex` can be installed with `conda`:
 
 ```
 conda install r-afex
 ```
 
-It is possible to list all of the versions of `r-afex` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-afex
+```
+
+It is possible to list all of the versions of `r-afex` available on your platform with `conda`:
 
 ```
 conda search r-afex --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-afex --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-afex --channel conda-forge
+
+# List packages depending on `r-afex`:
+mamba repoquery whoneeds r-afex --channel conda-forge
+
+# List dependencies of `r-afex`:
+mamba repoquery depends r-afex --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
