@@ -1,4 +1,4 @@
-{% set version = "1.5-0" %}
+{% set version = "1.5-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/afex_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/afex/afex_{{ version }}.tar.gz
-  sha256: b78aa9acba8e7f47f9cfb69a9739f07635ba042a10364e92922f317fd0b777c6
+  sha256: 68c5bb370579e288c4e11603a84aa637d2c44995faee10ebc2b42ebd86c03dbb
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
